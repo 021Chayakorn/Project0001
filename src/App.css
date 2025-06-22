@@ -1,0 +1,761 @@
+/* General Styles */
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@0;1&family=Audiowide&family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Dosis:wght@200..800&family=Exo+2:wght@100..900&family=Goldman:wght@400;700&family=Gruppo&family=Lexend+Zetta:wght@100..900&family=Libre+Barcode+39&family=Marcellus+SC&family=Megrim&family=Michroma&family=Mochiy+Pop+P+One&family=Monoton&family=Noto+Sans+JP:wght@100..900&family=Orbitron:wght@400..900&family=Poiret+One&family=Syncopate:wght@400;700&family=Train+One&family=Wix+Madefor+Display:wght@400..800&family=Yusei+Magic&display=swap');
+@import "tailwindcss";
+
+body {
+  margin: 0;
+    overflow-x: hidden;
+ font-family: "Gruppo", sans-serif;
+  background: radial-gradient(
+    circle at 10% 10%,
+    rgb(255, 255, 255),
+    transparent 30%
+  ) #ffffff;  /* ชั้นล่างเป็นดำล้วน */
+  background-size: cover;        /* ไล่กราดเดียนท์เต็มทั้งพื้นที่ */
+  background-repeat: no-repeat;
+  color: #000;
+}
+
+
+
+.background-text {
+   font-weight: 900; 
+  position: absolute; /* ทำให้ข้อความซ้อนกับพื้นหลัง */
+  top: 20%; /* จัดให้อยู่ตรงกลางในแนวตั้ง */
+  left:48%; /* จัดให้อยู่ตรงกลางในแนวนอน */
+  transform: translate(-50%, -50%); /* จัดให้อยู่ตรงกลางอย่างสมบูรณ์ */
+  font-size: 10vw; /* ขนาดฟอนต์ใหญ่ (ปรับตามความเหมาะสม) */
+  font-family: "Syncopate"; /* ใช้ฟอนต์ที่เหมาะสม */
+  color: rgba(0, 0, 0, 0.712); /* สีข้อความโปร่งใส */
+  z-index: 2; /* ทำให้ข้อความอยู่ด้านหลังองค์ประกอบอื่น */
+  pointer-events: none; /* ป้องกันการโต้ตอบกับข้อความ */
+  white-space: nowrap; /* ป้องกันข้อความตัดบรรทัด */
+ 
+  
+  border-right: 2px solid white;
+     animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+@-webkit-keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Header Styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  z-index: 100;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: inherit;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Logo Styles */
+.logo1 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo1 img {
+  width: 50px;
+  height: auto;
+}
+.logo1 h1 {
+  font-family: "Megrim", system-ui;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 40px;
+  color: rgb(0, 0, 0);
+  transition: text-shadow 0.3s ease-in-out;
+}
+
+/* Nav Styles */
+nav {
+  /* ตัด position: fixed ออก */
+  z-index: 10;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 105px;
+}
+
+nav ul li {
+     font-family: "Syncopate";
+
+  font-style: normal;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: inherit; /* รับสีจาก header */
+  font-size: 21px;
+  position: relative;
+  transition: color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+  color: #eec447;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8), 0 0 20px rgba(236, 198, 71, 0.6);
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: currentColor;
+  transition: width 0.3s;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* Header color switch */
+.header-white {
+  background: rgba(255,255,255,0.95);
+  color: #000;
+}
+.header-white nav ul li a,
+.header-white .logo1 h1 {
+  color: #000 !important;
+}
+
+.header-black {
+  background: transparent;
+  color: #000;
+}
+.header-black nav ul li a,
+.header-black .logo1 h1 {
+  color: #000 !important;
+}
+
+
+
+
+.logo1 h1 {
+color: rgb(0, 0, 0);
+     font-family: "Syncopate";
+
+  font-weight: 200;
+  font-style: normal;
+  transition: text-shadow 0.3s ease-in-out; 
+font-size: 30px;
+}
+
+
+
+
+.logo1 h1:hover {
+  text-shadow: 0 0 20px rgba(0, 0, 0, 4); /* เพิ่มเงาเรืองแสง */
+}
+
+
+
+
+.font {
+ left: 570px;
+ top: 350px;
+  
+  position: absolute;
+  transform: translate(-50%, -50%);
+  color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column; /* จัดเรียงในแนวตั้ง */
+  align-items: center; /* จัดให้อยู่ตรงกลาง */
+  gap: 0px; /* ลดระยะห่างระหว่างแต่ละกลุ่ม */
+ 
+   
+  
+}
+
+
+
+.font .row {
+ 
+  display: flex; /* จัดเรียง h1 และ h2 ในแนวนอน */
+  gap: 10px; /* ระยะห่างระหว่าง h1 และ h2 */
+  margin-bottom: 0px; /* ลดระยะห่างระหว่าง .row และ p */
+}
+
+.font h1, .font h2 {
+  top: -90px;
+  left: 40px;
+  text-decoration: none;
+  font-family: "Syncopate";
+  font-size: 150px;
+  margin: 0;
+  position: relative;
+  font-weight: 800; 
+  letter-spacing: 2px; /* เพิ่มบรรทัดนี้เพื่อให้ฟอนต์หนาขึ้น */
+}
+
+
+
+.font p {
+  font-family: "Train One", cursive;
+  font-weight: 400;
+  font-style: normal;
+
+ top: -130px;
+  font-size: 30px;
+  position: relative; /* ตั้ง position เพื่อให้ ::after ทำงาน */
+  color: rgb(255, 255, 255);
+}
+
+
+.font p::after {
+  content: ''; /* สร้างเส้น */
+  position: absolute;
+  top: 50%; /* จัดให้อยู่ตรงกลางในแนวตั้ง */
+  left: 100%; /* เริ่มต้นที่ท้ายข้อความ */
+  transform: translateY(-50%); /* จัดให้อยู่ตรงกลาง */
+  width: 100px; /* ความยาวของเส้น */
+  height: 2px; /* ความหนาของเส้น */
+ 
+  
+  animation: smokeEffect 2s infinite ease-in-out; /* เพิ่มอนิเมชัน */
+}
+
+.font h1:hover, .font h2:hover, .font p:hover {
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.6); /* เพิ่มเงาเรืองแสง */
+  transition: text-shadow 0.3s ease-in-out; /* ทำให้การเปลี่ยนแปลงนุ่มนวล */
+}
+
+
+
+.ui {
+  font-family: "Alumni Sans Pinstripe", sans-serif;
+  position: absolute;
+  text-align: center;
+
+  
+  transform: translate(-40%, -40%) rotate(-175deg); /* หมุนข้อความเอียงไปทางซ้ายเล็กน้อย */
+  color: white;
+  font-size: 20px;
+ /* จัดข้อความให้อยู่ตรงกลาง */
+  letter-spacing: 16px; /* ปรับระยะห่างระหว่างตัวอักษร */
+  display: inline-block; /* ทำให้ข้อความแสดงผลทีละตัว */
+}
+
+.ui span {
+  display: inline-block; /* ทำให้แต่ละตัวอักษรเป็นบล็อกแยก */
+  opacity: 0; /* เริ่มต้นด้วยการซ่อนตัวอักษร */
+  transform: translateY(20px); /* เริ่มต้นด้วยการเลื่อนลง */
+  animation: fadeIn 0.5s ease-in-out forwards; /* เพิ่มอนิเมชัน */
+}
+
+.ui span:nth-child(1) {
+  animation-delay: 0s; /* ตัวแรกแสดงทันที */
+}
+
+.ui span:nth-child(2) {
+  animation-delay: 0.1s; /* ตัวที่สองแสดงหลังจาก 0.1 วินาที */
+}
+
+.ui span:nth-child(3) {
+  animation-delay: 0.2s; /* ตัวที่สามแสดงหลังจาก 0.2 วินาที */
+}
+
+/* เพิ่ม nth-child ตามจำนวนตัวอักษรที่คุณมี */
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); /* เริ่มต้นด้วยการเลื่อนลง */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* เลื่อนกลับไปที่ตำแหน่งเดิม */
+  }
+}
+
+
+.wordd {
+  width: 800px;
+ margin-top: 300px; /* ปรับระยะห่างจากด้านบน */
+  margin-left: 100px; /* เพิ่มระยะห่างจากขอบขวา */
+  color: white;
+ 
+  font-optical-sizing: auto;
+  font-size: 100px;
+}
+
+.wordd p {
+font-family: 'Wix Madefor Display', Courier, monospace;
+ font-size: 20px;
+}
+
+
+ .wordd .shine {
+ font-family: "Syncopate";
+    width: 1000px;
+    font-size: 3rem;
+    font-weight: 900;
+    color: rgba(49, 49, 49, 0.945);
+    background: linear-gradient(
+      -40deg,
+      transparent 0%,
+      transparent 40%,
+      #fff 50%,
+      transparent 60%,
+      transparent 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200%;
+    animation: zezzz 5s infinite;
+  }
+  
+  @keyframes zezzz {
+    0% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 100% 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
+  }
+
+
+.aoo {
+   font-family: "Syncopate";
+}
+
+
+.aboutt {
+  margin: 0;
+  margin-top: 70px;
+  color: rgb(24, 24, 24);
+  font-family: "Syncopate", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;    /* จัดกึ่งกลางแนวนอน */
+  justify-content: center; /* จัดกึ่งกลางแนวตั้ง (ถ้าสูงพอ) */
+  text-align: center;      /* จัดข้อความกึ่งกลาง */
+}
+
+.aboutt h1 {
+ font-family: "Syncopate", sans-serif;
+  font-size: 50px;
+  margin-bottom: 20px;
+  color: rgb(22, 22, 22);
+  font-weight: 600;
+  margin-top: -80px;
+  margin-left: 1000px;
+  
+}
+
+.aboutt p {
+  width: 800px;
+  font-size: 20px;
+ margin-left: 600px;
+  
+text-align: right;
+}
+
+
+
+
+
+/* Animation keyframes for various effects used in the components */
+@keyframes glow {
+  0% { box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }
+  50% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(99, 179, 237, 0.6); }
+  100% { box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }
+}
+
+@keyframes scanLine {
+  0% { top: 0%; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.8rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+}
+
+.min-h-screen  {
+  margin-left: 500px;
+}
+
+
+.result-panels {
+ font-family: "Syncopate", sans-serif;
+  margin-top: 100px;
+  margin-left:250px;
+  width: 70%;
+  height:600px;
+  display: flex;
+  gap: 2rem;
+  opacity: 0;
+  animation: slideIn 0.8s ease forwards;
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.loo img {
+  position: absolute; 
+  z-index: 1;
+  width: 580px;
+  height: auto;
+  border-radius: 2%;
+  object-fit: cover;
+  display: block;
+  margin-left: 35%;
+  margin-top: 2%;
+  /* เพิ่มอนิเมชั่น */
+  animation: scaleUp 0.9s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+.AC {
+  margin-top: 1500px;
+  
+}
+
+.laogo-container {
+  top: -50px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 100px;
+  animation: fadeInScale 1s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInScale {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.laogo-circle {
+  top: -59px;
+  right: 240px;
+  width: 60px;
+  height: 60px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+.laogo-icon {
+  filter: none; /* ลบเอฟเฟกต์สีเทา */
+  opacity: 1; /* ทำให้รูปภาพแสดงผลเต็มที่ */
+}
+
+.text {
+  color:#e229a5 ;
+}
+
+
+.apt {
+  margin-top: -30px;
+ 
+}
+
+/* Sci-Fi Arrow Down */
+.arrow-down-sci {
+  width: 48px;
+  height: 48px;
+  margin: 32px auto 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  animation: arrow-glow 2s infinite alternate;
+  filter: drop-shadow(0 0 8px #00fff7) drop-shadow(0 0 16px #00fff7);
+}
+
+@keyframes arrow-glow {
+  0% { transform: translateY(0) scale(1);}
+  60% { transform: translateY(16px) scale(1.08);}
+  100% { transform: translateY(0) scale(1);}
+}
+
+
+.Para {
+  margin-top: 500px;
+}
+
+
+
+.Web {
+  font-family: "Syncopate";
+margin-top: -600px;
+}
+
+.Web h1 {
+  margin-right: 600px;
+ font-weight: 600;
+  font-size: 50px;
+  color: rgb(22, 22, 22);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.Web p {
+  font-size: 17px;
+  color: rgb(24, 24, 24);
+  text-align:left;
+  margin-left: 280px;
+
+  width: 750px;
+}
+
+.Web img {
+  width: 190px;
+  margin-left: 1100px;
+  margin-top: -220px;
+  filter: drop-shadow(0 0 24px rgba(255,255,255,0.8));
+  transition: box-shadow 0.3s, filter 0.3s, transform 0.3s;
+  opacity: 0; /* ซ่อนรูปไว้ก่อน */
+  /* ไม่ต้องใส่ animation ตรงนี้ */
+}
+
+.Web img.slide-up {
+  opacity: 1;
+  animation: slideUpFadeInn 1s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+@keyframes slideUpFadeInn {
+  0% {
+    opacity: 0;
+    transform: translateY(90px) rotate(-19deg) scale(0.95);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(-10px) rotate(-10deg) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotate(-10deg) scale(1);
+  }
+}
+
+.scroll-button {
+  margin-top: -100px;
+  left: 39px;
+  background: linear-gradient(135deg, #222 60%, #444 100%);
+  color: #fff;
+  border: 2px solid #fff;
+  padding: 15px 32px;
+  font-size: 18px;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+  transition: 
+    background 0.3s,
+    color 0.3s,
+    border-color 0.3s,
+    box-shadow 0.3s,
+    transform 0.15s;
+  font-family: "Syncopate", "Barlow Semi Condensed", Arial, sans-serif;
+  letter-spacing: 2px;
+  position: relative;
+  overflow: hidden;
+  /* เพิ่มลูกเล่นขยับปุ่มแต่ละปุ่มนิดเดียว */
+  margin-left: 8px;
+}
+
+.scroll-button::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255,255,255,0.08);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.4s, height 0.4s;
+  z-index: 0;
+}
+
+.scroll-button:hover {
+  background: linear-gradient(135deg, #111 60%, #333 100%);
+  color: #fff;
+  border-color: #e0e0e0;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.28);
+  transform: translateY(-2px) scale(1.04);
+}
+
+.scroll-button:active {
+  background: #000;
+  color: #fff;
+  border-color: #fff;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.18);
+  transform: scale(0.98);
+}
+
+.scroll-button:hover::after {
+  width: 220%;
+  height: 500%;
+}
+
+
+
+.gg {
+  width: 600px;
+  font-size: 25px;
+  margin-top: 150px;
+ margin-left: 300px;
+  color: white;
+}
+
+
+.mainn {
+  background-color: #000;
+   
+  
+}
+
+
+.hero-parallax-root {
+  margin-top: 2700px;
+  position: relative;
+ 
+  z-index: 9999; /* สูงสุด */
+ 
+}
+
+.cc2 {
+color: #000;
+}
+
+
+
+
+
+
+
+.scroll-to-top {
+  position: fixed;
+  right: 32px;
+  bottom: 32px;
+  width: 56px;
+  height: 56px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 9999;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  border: 2px solid #222;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+  animation: bounceUp 2s infinite;
+}
+.scroll-to-top:hover {
+  background: #222;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  transform: translateY(-8px) scale(1.08);
+}
+.arrow-svg {
+  display: block;
+  width: 32px;
+  height: 32px;
+  stroke: #222;
+  transition: stroke 0.3s;
+}
+.scroll-to-top:hover .arrow-svg {
+  stroke: #fff;
+}
+.scroll-to-top:hover circle {
+  fill: #222;
+  stroke: #fff;
+}
+.scroll-to-top:hover polyline {
+  stroke: #fff;
+}
+@keyframes bounceUp {
+  0%, 100% { transform: translateY(0);}
+  20% { transform: translateY(-8px);}
+  40% { transform: translateY(0);}
+}
+
+
+.ProgressCard {
+  margin-left: 670px;
+  margin-top: -510px;
+}

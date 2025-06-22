@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@0;1&family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bungee+Tint&family=Cascadia+Code:ital,wght@0,200..700;1,200..700&family=Exo+2:wght@100..900&family=Goldman:wght@400;700&family=Gruppo&family=Kaisei+HarunoUmi&family=Klee+One&family=Lexend+Zetta:wght@100..900&family=Libre+Barcode+128&family=Libre+Barcode+39&family=Marcellus+SC&family=Megrim&family=Monoton&family=Noto+Sans+JP:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poiret+One&family=Rampart+One&family=RocknRoll+One&family=Syncopate:wght@400;700&family=Train+One&family=Turret+Road:wght@200;300;400;500;700;800&family=Wix+Madefor+Display:wght@400..800&display=swap');
+
+
+.otwo {
+  
+ 
+  background: linear-gradient(145deg, #000000, #181818);
+  border-radius: 12px;
+  width: 88%;
+  animation: slideIn 0.8s ease forwards 0.4s;
+  opacity: 0;
+box-shadow: 0 190px 80px -12px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+  min-height: 700px;
+}
+
+.content-wrapper {
+  margin-top: 40px;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.integration-title {
+  font-family: "Syncopate";
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.integration-description {
+     font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #ffffff;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.rotating-circles {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 320px;
+  height: 320px;
+}
+
+.circle {
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.circle-1 {
+  width: 160px;
+  height: 160px;
+  animation: rotateLeft 20s linear infinite;
+}
+
+.circle-2 {
+  width: 240px;
+  height: 240px;
+  animation: rotateRight 25s linear infinite;
+}
+
+.circle-3 {
+  width: 320px;
+  height: 320px;
+  animation: rotateLeft 30s linear infinite;
+}
+
+.logo {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: rgba(122, 122, 122, 0.226);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.2);
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+}
+
+.logo img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+/* Circle 1 Logos */
+.circle-1 .logo:nth-child(1) { transform: translate(60px, 0); }
+.circle-1 .logo:nth-child(2) { transform: translate(-60px, 0); }
+
+/* Circle 2 Logos */
+.circle-2 .logo:nth-child(1) { transform: translate(100px, 0); }
+.circle-2 .logo:nth-child(2) { transform: translate(-50px, 87px); }
+.circle-2 .logo:nth-child(3) { transform: translate(-50px, -87px); }
+
+/* Circle 3 Logos */
+.circle-3 .logo:nth-child(1) { transform: translate(140px, 0); }
+.circle-3 .logo:nth-child(2) { transform: translate(-140px, 0); }
+.circle-3 .logo:nth-child(3) { transform: translate(-19px, 100px);}
+
+@keyframes rotateLeft {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(-360deg); }
+}
+
+@keyframes rotateRight {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@media (max-width: 1024px) {
+  .otwo {
+    width: 100%;
+  }
+  
+  .rotating-circles {
+    width: 280px;
+    height: 280px;
+  }
+  
+  .circle-1 { width: 140px; height: 140px; }
+  .circle-2 { width: 210px; height: 210px; }
+  .circle-3 { width: 280px; height: 280px; }
+  
+  .integration-title {
+     font-family: "Alumni Sans Pinstripe", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+    font-size: 1.8rem;
+  }
+  
+  .integration-description {
+      font-family: "Alumni Sans Pinstripe", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+    font-size: 1rem;
+  }
+}

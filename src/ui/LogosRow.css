@@ -1,0 +1,30 @@
+.logos-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px; /* ระยะห่างระหว่างโลโก้ */
+  padding: 20px;
+  margin-right: 70px;
+  flex-wrap: wrap; /* ถ้าหน้าจอแคบ จะขึ้นบรรทัดใหม่ */
+}
+
+.logo-item {
+  height: 52px;
+  
+  transition: filter 0.3s ease;
+}
+
+.logo-item:hover {
+  filter: grayscale(0%);
+}
+
+.logo-fadeup {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
+}
+
+.logo-fadeup.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

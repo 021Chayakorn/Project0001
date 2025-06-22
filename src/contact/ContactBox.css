@@ -1,0 +1,118 @@
+/* ContactBox.css */
+.contact-box {
+  position: fixed;
+  right: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.contact-box-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.438);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  pointer-events: auto;
+  animation: float 6s ease-in-out infinite;
+}
+
+.contact-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: #ffffff;
+  border-radius: 12px;
+  color: #000000;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.contact-link:hover {
+  transform: translateX(-4px) scale(1.1);
+  background: var(--hover-color, #333333);
+  color: white;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.contact-icon {
+  width: 24px;
+  height: 24px;
+  transition: all 0.3s ease;
+}
+
+.contact-tooltip {
+  position: absolute;
+  right: 60px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.contact-link:hover .contact-tooltip {
+  opacity: 1;
+}
+
+/* Floating animation */
+
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .contact-box-inner {
+    background: rgba(30, 30, 30, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .contact-link {
+    background: #2a2a2a;
+    color: #cccccc;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .contact-box {
+    right: 10px;
+  }
+  
+  .contact-box-inner {
+    padding: 12px;
+    gap: 8px;
+  }
+  
+  .contact-link {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .contact-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Hide tooltip on mobile */
+@media (max-width: 480px) {
+  .contact-tooltip {
+    display: none;
+  }
+}

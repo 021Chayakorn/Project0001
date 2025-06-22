@@ -1,0 +1,13 @@
+.result-panels {
+  width: 100%;
+  display: flex;
+  gap: 2rem;
+  opacity: 0;
+  animation: slideIn 0.8s ease forwards;
+}
+
+@media (max-width: 1024px) {
+  .result-panels {
+    flex-direction: column;
+  }
+}
