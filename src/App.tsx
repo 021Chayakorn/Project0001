@@ -25,6 +25,9 @@ function App() {
     }
   };
 
+
+const [lang, setLang] = useState<'en' | 'th'>('en');
+
   const [headerWhite, setHeaderWhite] = useState(false);
   const borRef = useRef<HTMLDivElement>(null);
 
@@ -88,6 +91,12 @@ function App() {
             </ul>
           </nav>
         </header>
+
+                
+        <button onClick={() => setLang(lang === 'en' ? 'th' : 'en')} className="lang-btn">
+          {lang === 'en' ? 'ไทย' : 'EN'}
+        </button>
+       
 
         <div className="Text">
           <CircularText text="CHAYAKORN*REACT*TSX*" spinDuration={20} onHover="speedUp" className="circular-text" />
