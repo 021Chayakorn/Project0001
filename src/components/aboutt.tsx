@@ -1,7 +1,8 @@
+
 import React, { useEffect, useRef } from 'react';
 import { User, Eye, Monitor, Users, Globe, Palette, Target, Code, MessageCircle, Zap, Heart, UserCheck } from 'lucide-react';
-import './aboutt.css';
 
+import './Aboutt.css'; // Assuming you have a CSS file for styles
 
 const aboutt = () => {
   const skillsRef = useRef<HTMLDivElement>(null);
@@ -36,7 +37,7 @@ const aboutt = () => {
         {/* Header Section */}
         <div className="header-section">
           <h1 className="main-title">
-           CHAYAKORN SAN
+            CHAYAKORN SAN
           </h1>
           <div className="title-underline"></div>
           <p className="subtitle">Web Developer / Cartoonist</p>
@@ -44,11 +45,11 @@ const aboutt = () => {
           <div className="intro-grid">
             <div className="intro-text">
               <p className="intro-paragraph">
-               Fully understands the context of work; capable of designing websites and anime-style characters smoothly based on your request, with a solid understanding of structural workflows.
+                Fully understands the context of work; capable of designing websites and anime-style characters smoothly based on your request, with a solid understanding of structural workflows.
               </p>
               <p className="intro-paragraph">
-      I have a deep passion for design — both in web development and anime character creation.
-Everything begins with creativity. I focus on understanding the emotions and feelings of users and viewers, ensuring that every design connects with them. My approach to UX/UI emphasizes simplicity and clarity, making interfaces intuitive and easy to navigate.
+                I have a deep passion for design — both in web development and anime character creation.
+                Everything begins with creativity. I focus on understanding the emotions and feelings of users and viewers, ensuring that every design connects with them. My approach to UX/UI emphasizes simplicity and clarity, making interfaces intuitive and easy to navigate.
               </p>
             </div>
             
@@ -56,8 +57,8 @@ Everything begins with creativity. I focus on understanding the emotions and fee
             <div className="profile-image-container">
               <div className="profile-placeholder">
                 <div className="profile-content">
-                  <User size={48} className="profile-icon" />
-                  <p className="profile-text">รูปโปรไฟล์จะอยู่ตรงนี้</p>
+
+                  <img src="/public/aaa/Me.jpeg" alt="Profile" className="profile-image" />
                 </div>
               </div>
             </div>
@@ -67,15 +68,12 @@ Everything begins with creativity. I focus on understanding the emotions and fee
         {/* Stats Section */}
         <div className="stats-section">
           <div className="stat-item">
-            <div className="stat-number">15+</div>
-            <div className="stat-label">Years of Experience</div>
+            <div className="stat-number">4.7+⭐</div>
+            <div className="stat-label">Satisfaction score</div>
           </div>
+       
           <div className="stat-item">
-            <div className="stat-number">17+</div>
-            <div className="stat-label">Projects Completed</div>
-          </div>
-          <div className="stat-item">
-            <div className="stat-number">30+</div>
+            <div className="stat-number">30+❤️</div>
             <div className="stat-label">Satisfied Clients</div>
           </div>
         </div>
@@ -115,7 +113,7 @@ Everything begins with creativity. I focus on understanding the emotions and fee
                 <Target className="skill-icon" />
                 UX Direction
               </div>
-              <div className="skill-badge animate-on-scroll">
+              <div className="skill-badge animate-on-scroll web-design-skill">
                 <Code className="skill-icon" />
                 Web Design
               </div>
@@ -136,6 +134,14 @@ Everything begins with creativity. I focus on understanding the emotions and fee
                   <Globe className="skill-icon" />
                   ญี่ปุ่น
                 </div>
+              </div>
+            </div>
+
+            {/* Projects Completed - Center */}
+            <div className="skill-category projects-center">
+              <div className="stat-item">
+                <div className="stat-number">20+</div>
+                <div className="stat-label">Projects Completed</div>
               </div>
             </div>
 
