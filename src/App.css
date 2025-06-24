@@ -613,7 +613,7 @@ margin-top: -600px;
 }
 
 .scroll-button {
-  margin-top: -100px;
+  margin-top: 100px;
   left: 39px;
   background: linear-gradient(135deg, #222 60%, #444 100%);
   color: #fff;

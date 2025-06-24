@@ -8,6 +8,7 @@ import Animations from './pages/animations';
 import ScatteredImage from './components/ScatteredImage';
 import LogoScatter from './ui/LogoScatter';
 import { FeaturesSection } from './contact/FeaturesSection';
+import Aboutt from './components/aboutt';
 
 interface IconData {
   src: string;
@@ -93,9 +94,7 @@ const [lang, setLang] = useState<'en' | 'th'>('en');
         </header>
 
                 
-        <button onClick={() => setLang(lang === 'en' ? 'th' : 'en')} className="lang-btn">
-          {lang === 'en' ? 'ไทย' : 'EN'}
-        </button>
+    
        
 
         <div className="Text">
@@ -109,9 +108,9 @@ const [lang, setLang] = useState<'en' | 'th'>('en');
         <ScatteredImage />
 
 
-        <div className="aboutme">
-          <h1>About Me</h1>
-          </div>
+       <div className="aboutme">
+  <Aboutt />
+</div>
 
         <div className="button-containero" style={{ display: "flex", gap: "1rem", justifyContent: "center", margin: "2rem 0" }}>
           <button onClick={() => scrollToSection('webwork')} className="scroll-button">
