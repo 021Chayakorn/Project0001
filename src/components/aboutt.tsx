@@ -1,8 +1,6 @@
-
 import React, { useEffect, useRef } from 'react';
 import { User, Eye, Monitor, Users, Globe, Palette, Target, Code, MessageCircle, Zap, Heart, UserCheck } from 'lucide-react';
-
-import './Aboutt.css'; // Assuming you have a CSS file for styles
+import './aboutt.css';
 
 const aboutt = () => {
   const skillsRef = useRef<HTMLDivElement>(null);
@@ -57,7 +55,7 @@ const aboutt = () => {
             <div className="profile-image-container">
               <div className="profile-placeholder">
                 <div className="profile-content">
-
+          
                   <img src="/public/aaa/Me.jpeg" alt="Profile" className="profile-image" />
                 </div>
               </div>
@@ -68,12 +66,12 @@ const aboutt = () => {
         {/* Stats Section */}
         <div className="stats-section">
           <div className="stat-item">
-            <div className="stat-number">4.7+⭐</div>
-            <div className="stat-label">Satisfaction score</div>
+            <div className="stat-number">15+</div>
+            <div className="stat-label">Years of Experience</div>
           </div>
-       
+         
           <div className="stat-item">
-            <div className="stat-number">30+❤️</div>
+            <div className="stat-number">30+</div>
             <div className="stat-label">Satisfied Clients</div>
           </div>
         </div>
@@ -125,14 +123,14 @@ const aboutt = () => {
             {/* Language Skills - Left Side */}
             <div className="skill-category">
               <h3 className="category-title animate-on-scroll">ทักษะภาษา</h3>
-              <div className="category-badges">
+              <div className="category-badges horizontal-badges">
                 <div className="language-badge animate-on-scroll">
                   <MessageCircle className="skill-icon" />
-                  อังกฤษ
+                  อังกฤษ 80%
                 </div>
                 <div className="language-badge animate-on-scroll">
                   <Globe className="skill-icon" />
-                  ญี่ปุ่น
+                  ญี่ปุ่น 80%
                 </div>
               </div>
             </div>
@@ -140,7 +138,7 @@ const aboutt = () => {
             {/* Projects Completed - Center */}
             <div className="skill-category projects-center">
               <div className="stat-item">
-                <div className="stat-number">20+</div>
+                <div className="stat-number">100+</div>
                 <div className="stat-label">Projects Completed</div>
               </div>
             </div>
@@ -148,22 +146,36 @@ const aboutt = () => {
             {/* Drawing Skills - Right Side */}
             <div className="skill-category skill-category-right">
               <h3 className="category-title animate-on-scroll">การวาดรูป</h3>
-              <div className="category-badges category-badges-right">
-                <div className="drawing-badge animate-on-scroll">
-                  <User className="skill-icon" />
-                  การออกแบบตัวละคร
+              <div className="drawing-skills-container">
+                <div className="drawing-skills-grid">
+                  <div className="drawing-skills-row">
+                    <div className="drawing-badge animate-on-scroll">
+                      <User className="skill-icon" />
+                      การออกแบบตัวละคร
+                    </div>
+                    <div className="drawing-badge animate-on-scroll">
+                      <Zap className="skill-icon" />
+                      ความคิดสร้างสรรค์
+                    </div>
+                  </div>
+                  <div className="drawing-skills-row">
+                    <div className="drawing-badge animate-on-scroll">
+                      <Heart className="skill-icon" />
+                      ความแฟนตาซี ไซไฟ
+                    </div>
+                    <div className="drawing-badge animate-on-scroll">
+                      <UserCheck className="skill-icon" />
+                      เข้าใจโครงสร้างตัวละคร
+                    </div>
+                  </div>
                 </div>
-                <div className="drawing-badge animate-on-scroll">
-                  <Zap className="skill-icon" />
-                  ความคิดสร้างสรรค์
-                </div>
-                <div className="drawing-badge animate-on-scroll">
-                  <Heart className="skill-icon" />
-                  ความแฟนตาซี ไซไฟ
-                </div>
-                <div className="drawing-badge animate-on-scroll">
-                  <UserCheck className="skill-icon" />
-                  เข้าใจโครงสร้างตัวละคร
+                <div className="drawing-image-container">
+                  <div className="drawing-image-placeholder">
+                    <div className="drawing-image-content">
+                      <Palette size={32} className="drawing-placeholder-icon" />
+                      <p className="drawing-placeholder-text">รูปผลงานการวาด</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { Zap, TrendingUp, DollarSign, Cloud } from "lucide-react";
+import { Zap, TrendingUp, DollarSign, Cloud, ArrowDown } from "lucide-react";
 import "./FeaturesSection.css";
 
 const FeaturesSection = () => {
@@ -17,14 +17,14 @@ const FeaturesSection = () => {
       description: "I explore and utilize powerful AI tools effectively, resulting in exceptional website creations."
     },
     {
-      icon: DollarSign,
-      percentage: "50%",
+      icon: ArrowDown,
+      percentage: "30%",
       title: "Handling Complex Work",
-      description: "Our prices are best in the market. No cap, no lock, no credit card required."
+      description: "In some cases, I might not be able to handle highly complex tasks unless I have a clear understanding of the subject matter."
     },
     {
       icon: Cloud,
-      percentage: "30%",
+      percentage: "100%",
       title: "Web Design and Development",
       description: "I have a deep understanding of aesthetics and creativity, enabling me to design outstanding websites while also empathizing with user experience on both applications and websites."
     }
