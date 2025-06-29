@@ -766,3 +766,31 @@ color: #000;
  background-color: #111111;
  color: #fff;
 }
+
+.skills-title {
+  margin-top: 80px;
+}
+
+   .logo-blocks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+   margin-top: -80px;
+    margin-left: 50px;
+   /*ระยะห่าง*/
+    gap: 20px; /* ระยะห่างระหว่างบล็อก */
+    padding: 20px; /* ระยะห่างจากขอบ */
+    
+  }
+
+
+  .me {
+    margin-left: 300px;
+   width: 60%;
+  
+  }
+
+  .aboutme{
+    margin-top: -1000px;
+    
+  }

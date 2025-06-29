@@ -1,9 +1,11 @@
+
 import React, { useEffect, useRef } from 'react';
-import { User, Eye, Monitor, Users, Globe, Palette, Target, Code, MessageCircle, Zap, Heart, UserCheck } from 'lucide-react';
+import { User, Eye, Monitor, Users, Globe, Palette, Target, Code, MessageCircle, Zap, Heart, UserCheck, Brain, Clock, Lightbulb, TrendingUp } from 'lucide-react';
 import './aboutt.css';
 
 const aboutt = () => {
   const skillsRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -16,6 +18,11 @@ const aboutt = () => {
                 el.classList.add('animate-visible');
               }, index * 200);
             });
+            
+            // Auto-play video when it comes into view
+            if (entry.target.querySelector('.drawing-video') && videoRef.current) {
+              videoRef.current.play().catch(console.log);
+            }
           }
         });
       },
@@ -26,160 +33,64 @@ const aboutt = () => {
       observer.observe(skillsRef.current);
     }
 
+    // Observe drawing section for video autoplay
+    const drawingSection = document.querySelector('.drawing-section');
+    if (drawingSection) {
+      observer.observe(drawingSection);
+    }
+
     return () => observer.disconnect();
   }, []);
 
   return (
     <div className="portfolio-container">
       <div className="portfolio-content">
-        {/* Header Section */}
-        <div className="header-section">
-          <h1 className="main-title">
-            CHAYAKORN SAN
-          </h1>
-          <div className="title-underline"></div>
-          <p className="subtitle">Web Developer / Cartoonist</p>
-          
-          <div className="intro-grid">
-            <div className="intro-text">
-              <p className="intro-paragraph">
-                Fully understands the context of work; capable of designing websites and anime-style characters smoothly based on your request, with a solid understanding of structural workflows.
-              </p>
-              <p className="intro-paragraph">
-                I have a deep passion for design — both in web development and anime character creation.
-                Everything begins with creativity. I focus on understanding the emotions and feelings of users and viewers, ensuring that every design connects with them. My approach to UX/UI emphasizes simplicity and clarity, making interfaces intuitive and easy to navigate.
-              </p>
-            </div>
-            
-            {/* Profile Image Placeholder */}
-            <div className="profile-image-container">
-              <div className="profile-placeholder">
-                <div className="profile-content">
-          
-                  <img src="/public/aaa/Me.jpeg" alt="Profile" className="profile-image" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Stats Section */}
-        <div className="stats-section">
-          <div className="stat-item">
-            <div className="stat-number">15+</div>
-            <div className="stat-label">Years of Experience</div>
-          </div>
-         
-          <div className="stat-item">
-            <div className="stat-number">30+</div>
-            <div className="stat-label">Satisfied Clients</div>
-          </div>
-        </div>
-
+       
         {/* Skills Section */}
         <div ref={skillsRef} className="skills-section">
-          <div className="skills-title-container">
-            <h2 className="skills-title animate-on-scroll">Skills</h2>
-            <span className="fire-emoji">🔥</span>
-          </div>
-          
-          {/* Main Skills */}
-          <div className="main-skills">
-            <div className="skills-container">
-              <div className="skill-badge animate-on-scroll">
-                <Eye className="skill-icon" />
-                Analytics
-              </div>
-              <div className="skill-badge animate-on-scroll">
-                <Monitor className="skill-icon" />
-                User Interface
-              </div>
-              <div className="skill-badge animate-on-scroll">
-                <Users className="skill-icon" />
-                User Experience
-              </div>
-              <div className="skill-badge animate-on-scroll">
-                <Globe className="skill-icon" />
-                Online Design
-              </div>
-              <div className="skill-break"></div>
-              <div className="skill-badge animate-on-scroll">
-                <Palette className="skill-icon" />
-                Branding
-              </div>
-              <div className="skill-badge animate-on-scroll">
-                <Target className="skill-icon" />
-                UX Direction
-              </div>
-              <div className="skill-badge animate-on-scroll web-design-skill">
-                <Code className="skill-icon" />
-                Web Design
-              </div>
-            </div>
-          </div>
+         
+        
 
-          {/* Language Skills and Drawing Skills */}
-          <div className="specialized-skills">
-            {/* Language Skills - Left Side */}
+          {/* Language Skills and Cognitive Skills Section */}
+          <div className="skills-grid-section">
             <div className="skill-category">
-              <h3 className="category-title animate-on-scroll">ทักษะภาษา</h3>
-              <div className="category-badges horizontal-badges">
+              <h3 className="category-title animate-on-scroll">Language skills</h3>
+              <div className="vertical-badges">
                 <div className="language-badge animate-on-scroll">
                   <MessageCircle className="skill-icon" />
-                  อังกฤษ 80%
+                  English 40%
                 </div>
                 <div className="language-badge animate-on-scroll">
                   <Globe className="skill-icon" />
-                  ญี่ปุ่น 80%
+                  Japan 50%
                 </div>
               </div>
             </div>
 
-            {/* Projects Completed - Center */}
-            <div className="skill-category projects-center">
-              <div className="stat-item">
-                <div className="stat-number">100+</div>
-                <div className="stat-label">Projects Completed</div>
-              </div>
-            </div>
-
-            {/* Drawing Skills - Right Side */}
-            <div className="skill-category skill-category-right">
-              <h3 className="category-title animate-on-scroll">การวาดรูป</h3>
-              <div className="drawing-skills-container">
-                <div className="drawing-skills-grid">
-                  <div className="drawing-skills-row">
-                    <div className="drawing-badge animate-on-scroll">
-                      <User className="skill-icon" />
-                      การออกแบบตัวละคร
-                    </div>
-                    <div className="drawing-badge animate-on-scroll">
-                      <Zap className="skill-icon" />
-                      ความคิดสร้างสรรค์
-                    </div>
-                  </div>
-                  <div className="drawing-skills-row">
-                    <div className="drawing-badge animate-on-scroll">
-                      <Heart className="skill-icon" />
-                      ความแฟนตาซี ไซไฟ
-                    </div>
-                    <div className="drawing-badge animate-on-scroll">
-                      <UserCheck className="skill-icon" />
-                      เข้าใจโครงสร้างตัวละคร
-                    </div>
-                  </div>
+            <div className="skill-category">
+              <h3 className="category-title animate-on-scroll">Cognitive and Work Skills</h3>
+              <div className="cognitive-badges-grid">
+                <div className="cognitive-badge animate-on-scroll">
+                  <Brain className="skill-icon" />
+                  Problem Solving
                 </div>
-                <div className="drawing-image-container">
-                  <div className="drawing-image-placeholder">
-                    <div className="drawing-image-content">
-                      <Palette size={32} className="drawing-placeholder-icon" />
-                      <p className="drawing-placeholder-text">รูปผลงานการวาด</p>
-                    </div>
-                  </div>
+                <div className="cognitive-badge animate-on-scroll">
+                  <TrendingUp className="skill-icon" />
+                  Adaptability
+                </div>
+                <div className="cognitive-badge animate-on-scroll">
+                  <Clock className="skill-icon" />
+                  Time Management
+                </div>
+                <div className="cognitive-badge animate-on-scroll">
+                  <Lightbulb className="skill-icon" />
+                  Self-learning
                 </div>
               </div>
             </div>
           </div>
+
+  
         </div>
       </div>
     </div>

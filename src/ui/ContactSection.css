@@ -1,0 +1,145 @@
+
+.contact-container {
+    
+  min-height: 100vh;
+margin-top: -820px;
+margin-left: 660px;
+  color: rgb(255, 255, 255);
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-box {
+    height: 370px;
+  width: 100%;
+  max-width: 37rem;
+  background: linear-gradient(145deg, #000000f5, #1d1d1d);
+  border: 2px solid white;
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+}
+
+.contact-header {
+  margin-bottom: 1.5rem;
+}
+
+.contact-title {
+  font-family: "Syncopate";
+  font-size: 1.875rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+
+  border-bottom: 1px solid rgb(255, 255, 255);
+  padding-bottom: 0.75rem;
+}
+
+
+
+@media (min-width: 768px) {
+  .contact-title {
+    font-size: 2.25rem;
+  }
+}
+
+.contact-description {
+    font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+  
+  line-height: 1.625;
+}
+
+@media (min-width: 768px) {
+  .contact-description {
+    font-size: 1rem;
+  }
+}
+
+.social-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .social-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.social-link {
+  background-color: rgb(17, 17, 17);
+  border: 1px solid white;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+.social-link:hover {
+  background-color: white;
+  color: black;
+}
+
+.social-content {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.social-icon {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icon svg {
+  transition: transform 0.3s ease;
+}
+
+.social-link:hover .social-icon svg {
+  transform: scale(1.1);
+}
+
+.social-info {
+  flex: 1;
+}
+
+.social-label {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 500;
+  font-size: 0.75rem;
+  color: #c084fc;
+  margin-bottom: 0.25rem;
+}
+
+.social-link:hover .social-label {
+  color: #9333ea;
+}
+
+.social-name {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.contact-decorator {
+ 
+   font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.decorator-line {
+  display: inline-block;
+  width: 3rem;
+  height: 2px;
+  background-color: white;
+}

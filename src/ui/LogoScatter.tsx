@@ -16,7 +16,6 @@ const LogoScatter: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   const generateLogos = (): LogoType[] => {
-    // Replace these with your actual image paths and descriptions
     const logosData = [
       {
         imageSrc: 'https://miro.medium.com/v2/resize:fit:1400/1*baHkjoHxOkX_unPGLSQdhg.png',
@@ -39,15 +38,15 @@ const LogoScatter: React.FC = () => {
         description: 'v0.dev :  Instantly turns text prompts into React or HTML web interfaces'
       }
     ];
-    
+
     return logosData.map((logo, index) => {
       const angle = (index / logosData.length) * 2 * Math.PI;
       const distance = 100;
-      
+
       return {
         ...logo,
         initialPosition: { x: 0, y: 0 },
-        finalPosition: { 
+        finalPosition: {
           x: Math.cos(angle) * distance,
           y: Math.sin(angle) * distance
         },
@@ -65,10 +64,7 @@ const LogoScatter: React.FC = () => {
         const [entry] = entries;
         if (entry.isIntersecting) {
           setIsVisible(true);
-          // Start showcase animation after 2 seconds
-          setTimeout(() => {
-            startShowcase();
-          }, 2000);
+          startShowcase(); // เริ่ม loop ทันทีเมื่อเลื่อนมาเจอ
         }
       },
       {
@@ -92,14 +88,9 @@ const LogoScatter: React.FC = () => {
   const startShowcase = () => {
     let currentIndex = 0;
     const interval = setInterval(() => {
-      if (currentIndex >= logos.length) {
-        setActiveIndex(-1); // Reset to scattered state
-        clearInterval(interval);
-        return;
-      }
       setActiveIndex(currentIndex);
-      currentIndex++;
-    }, 3000); // Show each logo for 3 seconds
+      currentIndex = (currentIndex + 1) % logos.length;
+    }, 3000); // วนไปเรื่อย ๆ ทุก 3 วินาที
   };
 
   return (
@@ -112,7 +103,7 @@ const LogoScatter: React.FC = () => {
           <p className={`logo-scatter-description ${isVisible ? 'visible' : ''}`}>
             {activeIndex >= 0 ? logos[activeIndex].description : 'These are the AIs we use to develop high-quality applications and websites with fast performance and responsive design for all screen sizes.'}
           </p>
-          
+
           <div className="logo-scatter-logos">
             {logos.map((logo, index) => (
               <div

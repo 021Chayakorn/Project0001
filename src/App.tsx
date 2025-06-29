@@ -1,4 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { User, Eye, Monitor, Users, Globe, Palette, Target, Code, MessageCircle, Zap, Heart, UserCheck, Brain, Clock, Lightbulb, TrendingUp } from 'lucide-react';
+
 import './App.css';
 import CircularText from './ui/CircularText';
 import LogoBlocks from './components/LogoBlocks';
@@ -9,6 +11,7 @@ import ScatteredImage from './components/ScatteredImage';
 import LogoScatter from './ui/LogoScatter';
 import { FeaturesSection } from './contact/FeaturesSection';
 import Aboutt from './components/aboutt';
+import  ContactSection  from './ui/ContactSection';
 
 interface IconData {
   src: string;
@@ -26,6 +29,32 @@ function App() {
     }
   };
 
+  const skillsRef = useRef<HTMLDivElement>(null);
+
+useEffect(() => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const animatedElements = entry.target.querySelectorAll('.animate-on-scroll');
+          animatedElements.forEach((el, index) => {
+            setTimeout(() => {
+              el.classList.add('animate-visible');
+            }, index * 200);
+          });
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+
+  if (skillsRef.current) {
+    observer.observe(skillsRef.current);
+  }
+
+  return () => observer.disconnect();
+}, []);
+
 
 const [lang, setLang] = useState<'en' | 'th'>('en');
 
@@ -36,23 +65,7 @@ const [lang, setLang] = useState<'en' | 'th'>('en');
   const webImgRef = useRef<HTMLImageElement>(null);
   const [showWebImg, setShowWebImg] = useState(false);
 
-  // สำหรับ header
-  useEffect(() => {
-    const borEl = borRef.current;
-    if (!borEl) return;
-
-    const observer = new window.IntersectionObserver(
-      ([entry]) => {
-        setHeaderWhite(entry.isIntersecting);
-      },
-      {
-        root: null,
-        threshold: 0.1,
-      }
-    );
-    observer.observe(borEl);
-    return () => observer.disconnect();
-  }, []);
+  
 
   // สำหรับรูป
   useEffect(() => {
@@ -76,7 +89,7 @@ const [lang, setLang] = useState<'en' | 'th'>('en');
         <div className="background-text">Port Foli</div>
 
         {/* Header Section */}
-        <header className={headerWhite ? "header-white" : "header-black"}>
+        <header>
           {/* Logo */}
           <div className="logo1">
             <img src="/public/aaa/Logo1.png" alt="C" />
@@ -108,19 +121,39 @@ const [lang, setLang] = useState<'en' | 'th'>('en');
 
         <ScatteredImage />
 
-
-       <div className="aboutme">
-  <Aboutt />
-</div>
-
-        <div className="button-containero" style={{ display: "flex", gap: "1rem", justifyContent: "center", margin: "2rem 0" }}>
-          <button onClick={() => scrollToSection('webwork')} className="scroll-button">
-            View Website Projects
-          </button>
-          <button onClick={() => scrollToSection('artwork')} className="scroll-button">
-            Design & Artwork Portfolio
-          </button>
+<div className="me">
+ <div className="header-section">
+          <h1 className="main-title">
+            CHAYAKORN SAN
+          </h1>
+          <div className="title-underline"></div>
+          <p className="subtitle">Web Developer / Cartoonist</p>
+          
+          <div className="intro-grid">
+            <div className="intro-text">
+              <p className="intro-paragraph">
+                Fully understands the context of work; capable of designing websites and anime-style characters smoothly based on your request, with a solid understanding of structural workflows.
+              </p>
+              <p className="intro-paragraph">
+                I have a deep passion for design — both in web development and anime character creation.
+                Everything begins with creativity. I focus on understanding the emotions and feelings of users and viewers, ensuring that every design connects with them. My approach to UX/UI emphasizes simplicity and clarity, making interfaces intuitive and easy to navigate.
+              </p>
+            </div>
+            
+            {/* Profile Image Placeholder */}
+            <div className="profile-image-container">
+              <div className="profile-placeholder">
+                <div className="profile-content">
+                 
+                  <img src="/public/aaa/Me.jpeg" alt="Profile" className="profile-image" />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+  </div>
+
+       
       </div>
 
    <div className="bor" ref={borRef} style={{ minHeight: '100vh' }}>
@@ -146,6 +179,46 @@ const [lang, setLang] = useState<'en' | 'th'>('en');
             <div className="aoo">
               <h1> MY SKILLS </h1>
               <p>The tools and technologies I use to create powerful and beautiful websites.</p>
+              <div ref={skillsRef} className="skills-section">
+  <div className="skills-title-container">
+    <h2 className="skills-title animate-on-scroll">Skills</h2>
+   
+  </div>
+  
+  {/* Main Skills */}
+  <div className="main-skills">
+    <div className="skills-container">
+      <div className="skill-badge animate-on-scroll">
+        <Eye className="skill-icon" />
+        Analytics
+      </div>
+      <div className="skill-badge animate-on-scroll">
+        <Monitor className="skill-icon" />
+        User Interface
+      </div>
+      <div className="skill-badge animate-on-scroll">
+        <Users className="skill-icon" />
+        User Experience
+      </div>
+      <div className="skill-badge animate-on-scroll">
+        <Globe className="skill-icon" />
+        Online Design
+      </div>
+      <div className="skill-badge animate-on-scroll">
+        <Palette className="skill-icon" />
+        Branding
+      </div>
+      <div className="skill-badge animate-on-scroll">
+        <Target className="skill-icon" />
+        UX Direction
+      </div>
+      <div className="skill-badge animate-on-scroll web-design-skill">
+        <Code className="skill-icon" />
+        Web Design
+      </div>
+    </div>
+  </div>
+</div>
               <h3>_________________________________________________________________________________________________________________________________________________________________________________</h3>
               <LogosRow />
             </div>
@@ -162,6 +235,18 @@ const [lang, setLang] = useState<'en' | 'th'>('en');
           <Animations />
         </div>
 
+        <ContactSection />
+
+<div className="logo-blocks">
+          {/* Language Skills and Cognitive Skills Section */}
+         
+        </div>
+
+        {/* Skills Section */}
+
+
+
+
       <div className="features-section">
         <FeaturesSection />
       </div>
@@ -171,6 +256,10 @@ const [lang, setLang] = useState<'en' | 'th'>('en');
         <div className="min-h-screen flex items-center justify-center bg-background">
       
     </div>
+
+         <div className="aboutme">
+  <Aboutt />
+</div>
       </div>
 
 
@@ -182,9 +271,6 @@ const [lang, setLang] = useState<'en' | 'th'>('en');
       <div id="artwork" className="artwork-section">
         <h2>ผลงานออกแบบ-วาดรูป</h2>
         <p>นี่คือส่วนของผลงานออกแบบ-วาดรูปของคุณ...</p>
-
-
-
 
 
 
