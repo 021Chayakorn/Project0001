@@ -12,6 +12,7 @@ import LogoScatter from './ui/LogoScatter';
 import { FeaturesSection } from './contact/FeaturesSection';
 import Aboutt from './components/aboutt';
 import  ContactSection  from './ui/ContactSection';
+import Header from './uq/Header';
 
 interface IconData {
   src: string;
@@ -88,23 +89,7 @@ const [lang, setLang] = useState<'en' | 'th'>('en');
       <div className="main"> 
         <div className="background-text">Port Foli</div>
 
-        {/* Header Section */}
-        <header>
-          {/* Logo */}
-          <div className="logo1">
-            <img src="/public/aaa/Logo1.png" alt="C" />
-            <h1>Chayakorn</h1>
-          </div>
-          {/* Menu */}
-          <nav>
-            <ul>
-              <li><a href="#home">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#projects">Projects</a></li>
-              <li><a href="#contect">Contact</a></li>
-            </ul>
-          </nav>
-        </header>
+   <Header />
 
                 
     
