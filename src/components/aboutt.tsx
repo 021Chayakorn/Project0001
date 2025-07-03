@@ -66,6 +66,7 @@ const aboutt = () => {
                 </div>
               </div>
             </div>
+            <div className="skills-divider"></div>
 
             <div className="skill-category">
               <h3 className="category-title animate-on-scroll">Cognitive and Work Skills</h3>

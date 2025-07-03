@@ -130,7 +130,7 @@ const [lang, setLang] = useState<'en' | 'th'>('en');
               <div className="profile-placeholder">
                 <div className="profile-content">
                  
-                  <img src="/public/aaa/Me.jpeg" alt="Profile" className="profile-image" />
+                  <img src="/public/aaa/Logo1.png" alt="Profile" className="profile-image" />
                 </div>
               </div>
             </div>
@@ -220,7 +220,7 @@ const [lang, setLang] = useState<'en' | 'th'>('en');
           <Animations />
         </div>
 
-        <ContactSection />
+       
 
 <div className="logo-blocks">
           {/* Language Skills and Cognitive Skills Section */}

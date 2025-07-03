@@ -78,9 +78,9 @@
 }
 
 .profile-placeholder {
-  margin-top: -50px;
-  width: 16rem;
-  height: 16rem;
+  margin-top: -150px;
+  width: 26rem;
+  height: 26rem;
   background-color: #e5e7eb;
   border-radius: 0.5rem;
   display: flex;
@@ -267,8 +267,9 @@
 .skills-grid-section {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 3rem;
+  gap: 2rem;
   margin-bottom: 3rem;
+margin-right: 56px;
 }
 
 @media (min-width: 768px) {
@@ -278,6 +279,7 @@
 }
 
 .skill-category {
+ margin-left: 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -315,6 +317,7 @@
 }
 
 .language-badge {
+ 
   display: flex;
   align-items: center;
   padding: 0.5rem 1rem;
@@ -632,5 +635,36 @@
   
   .drawing-skills-row {
     justify-content: center;
+  }
+}
+
+
+.skills-divider {
+margin: 0 2rem ;
+  width: 1px;
+ background-color: #807f7f48;
+  margin: 0 2rem;
+  border-radius: 1px;
+}
+
+@media (min-width: 768px) {
+  .skills-grid-section {
+    grid-template-columns: 1fr 2px 1fr; /* เพิ่มคอลัมน์สำหรับ divider */
+  }
+  .skills-divider {
+    height: 100%;
+    align-self: stretch;
+  }
+}
+
+@media (max-width: 767px) {
+  .skills-divider {
+    width: 80%;
+    height: 2px;
+    margin: 2rem auto;
+  background-color: #000000;
+  }
+  .skills-grid-section {
+    grid-template-columns: 1fr;
   }
 }

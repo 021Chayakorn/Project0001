@@ -19,7 +19,7 @@ const Header = () => {
 
         {/* Social Media Section */}
         <div className="social-section">
-          <span className="share-text">SHARE</span>
+          <span className="share-text">CONTACT</span>
           <div className="social-divider"></div>
           <div className="social-links">
             <a href="#" className="social-link facebook">
