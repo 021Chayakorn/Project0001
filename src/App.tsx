@@ -13,6 +13,7 @@ import { FeaturesSection } from './contact/FeaturesSection';
 import Aboutt from './components/aboutt';
 import  ContactSection  from './ui/ContactSection';
 import Header from './uq/Header';
+import Projects from './components/Projact';
 
 interface IconData {
   src: string;
@@ -248,14 +249,11 @@ const [lang, setLang] = useState<'en' | 'th'>('en');
       </div>
 
 
- {/* ================================================================================ จบโซนWeb ================================================================================ */}
 
-      <div style={{ height: '100vh' }} />
 
- {/* ================================================================================ โซนรูปวาด ================================================================================ */}
-      <div id="artwork" className="artwork-section">
-        <h2>ผลงานออกแบบ-วาดรูป</h2>
-        <p>นี่คือส่วนของผลงานออกแบบ-วาดรูปของคุณ...</p>
+<div className="projects-section">
+  <Projects />
+</div>
 
 
 
@@ -297,30 +295,7 @@ const [lang, setLang] = useState<'en' | 'th'>('en');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
+      
 
 
 
