@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { User, Eye, Monitor, Users, Globe, Palette, Target, Code, MessageCircle, Zap, Heart, UserCheck, Brain, Clock, Lightbulb, TrendingUp } from 'lucide-react';
+import { User, Eye, Monitor, Users, Globe, Palette, Target, Code } from 'lucide-react';
 
 import './App.css';
 import CircularText from './ui/CircularText';
@@ -14,13 +14,8 @@ import Aboutt from './components/aboutt';
 import  ContactSection  from './ui/ContactSection';
 import Header from './uq/Header';
 import Projects from './components/Projact';
-
-interface IconData {
-  src: string;
-  alt: string;
-  size: number; 
-  auraColor: string;
-}
+import Testimonials from './components/demotest';
+import QASection from './pages/QASection';
 
 
 function App() {
@@ -256,9 +251,17 @@ const [lang, setLang] = useState<'en' | 'th'>('en');
 </div>
 
 
+<div className="response">
+  <h1>Evaluation of the work</h1>
+
+  <Testimonials />
+ </div>
 
 
 
+ <div className="QA">
+  <QASection />
+  </div>
 
 
 

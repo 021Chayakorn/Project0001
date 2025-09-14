@@ -681,3 +681,25 @@ color: #000;
     margin-top: -400px;  
   
   }
+
+  .response{
+    margin-left: 200px;
+  }
+
+  .response h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #000000;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    margin-right: 200px;
+
+  }
+
+ 
+
+  .QA {
+margin-top: 250px;
+  }
+
+  

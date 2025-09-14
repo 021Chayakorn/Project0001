@@ -1,0 +1,58 @@
+.testimonials-column {
+  overflow: hidden;
+}
+
+.testimonials-motion-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-bottom: 24px;
+  background-color: #fff; /* เปลี่ยนตามธีมคุณ */
+}
+
+.testimonial-card {
+  padding: 40px;
+  border-radius: 24px;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 20px rgba(98, 0, 234, 0.1); /* เทียบเท่า shadow-primary/10 */
+  max-width: 320px;
+  width: 100%;
+  background-color: #ffffff;
+}
+
+.testimonial-text {
+  font-size: 16px;
+  color: #333;
+}
+
+.testimonial-profile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.testimonial-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+}
+
+.testimonial-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial-name {
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: #000;
+}
+
+.testimonial-role {
+  opacity: 0.6;
+  font-size: 14px;
+  line-height: 1.25;
+  color: #555;
+}
