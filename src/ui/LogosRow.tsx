@@ -14,6 +14,8 @@ const LogosRow: React.FC = () => {
     "/public/web/Vue.png",
     "/public/web/node.png",
     "/public/web/next.png",
+    "/public/web/three.png",
+    "/public/web/NestJS.png",
   ];
 
   const containerRef = useRef<HTMLDivElement>(null);
