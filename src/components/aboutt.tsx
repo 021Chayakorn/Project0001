@@ -62,7 +62,7 @@ const aboutt = () => {
                 </div>
                 <div className="language-badge animate-on-scroll">
                   <Globe className="skill-icon" />
-                  Japan 50%
+                  Japan ควย 20%
                 </div>
               </div>
             </div>

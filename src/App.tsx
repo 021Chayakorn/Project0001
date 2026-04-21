@@ -18,6 +18,7 @@ import Testimonials from './components/demotest';
 import QASection from './pages/QASection';
 
 
+
 function App() {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -296,7 +297,7 @@ const [lang, setLang] = useState<'en' | 'th'>('en');
 
 
 
-
+ 
 
       
 
